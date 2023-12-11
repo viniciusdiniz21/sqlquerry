@@ -1,5 +1,5 @@
 # sqlquerry
-Tipo CREATE TABLE Disciplina (
+CREATE TABLE Disciplina (
     DisciplinaId INT PRIMARY KEY,
     Descricao VARCHAR(200),
     Sigla CHAR(3)
