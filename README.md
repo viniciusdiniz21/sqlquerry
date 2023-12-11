@@ -36,3 +36,20 @@ INSERT INTO DisciplinaAluno (DisciplinaId, AlunoId, SemestreLetivo, DataMatricul
 VALUES (1, 1, '2023A', '2023-01-15', 'A'),
        (2, 2, '2023A', '2023-02-20', 'B'),
        (3, 3, '2023B', '2023-03-10', 'C');
+
+       --ex alterar constrain 
+       
+CREATE TABLE UF (
+    ID_UF INT PRIMARY KEY IDENTITY, 
+    Cod_UF INT NOT NULL,
+    DescUF nvarchar(50) NOT NULL
+);
+
+CREATE TABLE IDE (
+    ID_IDE INT PRIMARY KEY IDENTITY, 
+    Cod_UF INT NOT NULL
+    DescIDE nvarchar(50) NOT NULL
+);
+
+ALTER TABLE IDE
+ADD CONSTRAINT IDE_UF_FK FOREIGN KEY (Cod_UF) REFERENCES UF (ID_UF);
